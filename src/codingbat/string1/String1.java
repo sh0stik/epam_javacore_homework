@@ -226,12 +226,6 @@ public class String1 {
     }
 
 
-    public static void main(String[] args) {
-        String1 par = new String1();
-        //  System.out.println( par.twoChar("Hello", 3));
-        System.out.println(par.hasBad("xba"));
-
-    }
 
 }
 
