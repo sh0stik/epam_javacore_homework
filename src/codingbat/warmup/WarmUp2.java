@@ -1,4 +1,4 @@
-package codingbat.warmup2;
+package codingbat.warmup;
 
 public class WarmUp2 {
     public String stringTimes(String str, int n) {

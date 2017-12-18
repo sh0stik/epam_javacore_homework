@@ -1,4 +1,4 @@
-package codingbat.string1;
+package codingbat.string;
 
 public class String1 {
 
