@@ -1,4 +1,4 @@
-package hackerrank.introducktion;
+package hackerrank.introduction;
 import java.util.*;
 
 public class JavaStdinAndStdout {

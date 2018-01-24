@@ -1,7 +1,6 @@
-package hackerrank.introducktion;
+package hackerrank.introduction;
 
 import java.util.*;
-import java.io.*;
 
 public class JavaLoopsII {
     public static void main(String []argh){

@@ -1,9 +1,4 @@
-package hackerrank.introducktion;
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
+package hackerrank.introduction;
 import java.util.Scanner;
 
 public class JavaEndOfFile {

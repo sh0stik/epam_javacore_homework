@@ -1,4 +1,4 @@
-package hackerrank.introducktion;
+package hackerrank.introduction;
 
 public class WelomeToJava {
     public static void main(String[] args) {

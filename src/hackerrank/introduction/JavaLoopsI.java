@@ -1,9 +1,5 @@
-package hackerrank.introducktion;
-import java.io.*;
+package hackerrank.introduction;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 public class JavaLoopsI {
     public static void main(String[] args) {

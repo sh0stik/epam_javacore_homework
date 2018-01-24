@@ -1,4 +1,4 @@
-package hackerrank.introducktion;
+package hackerrank.introduction;
 
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
