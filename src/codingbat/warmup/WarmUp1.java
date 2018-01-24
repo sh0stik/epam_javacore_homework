@@ -14,12 +14,8 @@ public class WarmUp1 {
     }
 
     public boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
-        if (aSmile && bSmile) {
-            return true;
-        }
-        if (!aSmile && !bSmile) {
-            return true;
-        }
+        if (aSmile && bSmile || (!aSmile && !bSmile)) return true;
+
         if (aSmile && !bSmile) {
             return false;
         }
@@ -52,27 +48,19 @@ public class WarmUp1 {
     }
 
     public boolean parrotTrouble(boolean talking, int hour) {
-        if (talking && (hour < 7 || hour > 20)) {
-            return true;
-        }
-        return false;
+        return talking && (hour < 7 || hour > 20);
     }
 
     public boolean makes10(int a, int b) {
         int sum = a + b;
-        if (a == 10|| b == 10 || sum == 10){
-            return true;
-        }
+        if (a == 10|| b == 10 || sum == 10) return true;
         Math.pow(2,7);
 
         return false;
     }
 
     public boolean nearHundred(int n) {
-        if ((Math.abs(100 - n) <= 10) || (Math.abs(200 - n) <= 10)) {
-            return true;
-        }
-        return false;
+        return (Math.abs(100 - n) <= 10) || (Math.abs(200 - n) <= 10);
     }
 
     public boolean posNeg(int a, int b, boolean negative) {
@@ -121,13 +109,7 @@ public class WarmUp1 {
     }
 
     public boolean or35(int n) {
-        if (n % 15 == 0) {
-            return true;
-        } else if (n % 3 == 0) {
-            return true;
-        } else if (n % 5 == 0) {
-            return true;
-        } else return false;
+        return n % 15 == 0 || n % 3 == 0 || n % 5 == 0;
     }
 
     public String front22(String str) {
@@ -148,17 +130,11 @@ public class WarmUp1 {
     }
 
     public boolean icyHot(int temp1, int temp2) {
-        if ((temp1 < 0 || temp2 < 0) && (temp1 > 100 || temp2 > 100)) {
-            return true;
-        } else return false;
+        return (temp1 < 0 || temp2 < 0) && (temp1 > 100 || temp2 > 100);
     }
 
     public boolean in1020(int a, int b) {
-        if ((a >= 10 && a <= 20) || (b >= 10 && b <= 20)) {
-            return true;
-        } else {
-            return false;
-        }
+        return (a >= 10 && a <= 20) || (b >= 10 && b <= 20);
     }
 
     public boolean hasTeen(int a, int b, int c) {
@@ -183,9 +159,7 @@ public class WarmUp1 {
         if (str.length() < 3) {
             return false;
         }
-        if (str.substring(1, 3).equals("ix")) {
-            return true;
-        } else return false;
+        return str.substring(1, 3).equals("ix");
     }
 
     public String startOz(String str) {
@@ -223,10 +197,7 @@ public class WarmUp1 {
     }
 
     public boolean in3050(int a, int b) {
-        if ((a >= 30 && a <= 40 && b >= 30 && b <= 40) || (a >= 40 && a <= 50 && b >= 40 && b <= 50)) {
-            return true;
-        }
-        return false;
+        return (a >= 30 && a <= 40 && b >= 30 && b <= 40) || (a >= 40 && a <= 50 && b >= 40 && b <= 50);
     }
 
     public int max1020(int a, int b) {
@@ -252,10 +223,7 @@ public class WarmUp1 {
     }
 
     public boolean lastDigit(int a, int b) {
-        if (((b % 10) == a) || ((a % 10) == b)) {
-            return true;
-        }
-        return false;
+        return ((b % 10) == a) || ((a % 10) == b);
 
     }
 

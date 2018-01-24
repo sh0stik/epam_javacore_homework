@@ -95,8 +95,7 @@ public class String1 {
 
     public boolean endsLy(String str) {
         if (str.length() < 2) return false;
-        if (str.substring(str.length() - 2).equals("ly")) return true;
-        return false;
+        return str.substring(str.length() - 2).equals("ly");
     }
 
     public String nTwice(String str, int n) {
@@ -121,10 +120,7 @@ public class String1 {
     public boolean hasBad(String str) {
         if (str.length() == 3 && str.equals("bad")) return true;
         if (str.length() < 3 || (str.substring(1).length() < 3 && !(str.substring(1).equals("bad")))) return false;
-        if ((str.substring(0, 3).equals("bad") || (str.substring(1, 4).equals("bad")))) {
-            return true;
-        }
-        return false;
+        return (str.substring(0, 3).equals("bad") || (str.substring(1, 4).equals("bad")));
     }
 
     public String atFirst(String str) {
@@ -163,8 +159,7 @@ public class String1 {
     public boolean frontAgain(String str) {
         if (str.length() <= 1) return false;
         if (str.length() < 4 && str.length() > 1) return true;
-        if (str.substring(0, 2).equals(str.substring(str.length() - 2))) return true;
-        return false;
+        return str.substring(0, 2).equals(str.substring(str.length() - 2));
     }
 
     public String minCat(String a, String b) {
