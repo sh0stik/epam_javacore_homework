@@ -3,11 +3,11 @@ package codingbat.string;
 public class String2 {
 
     public String doubleChar(String str) {
-        String arr = "";
+        StringBuilder arr = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
-            arr = arr + str.substring(i, i + 1) + str.substring(i, i + 1);
+            arr.append(str.substring(i, i + 1)).append(str.substring(i, i + 1));
         }
-        return arr;
+        return arr.toString();
     }
 
     public int countHi(String str) {
