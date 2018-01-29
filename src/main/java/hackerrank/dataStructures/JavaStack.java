@@ -26,8 +26,9 @@ public class JavaStack {
         Scanner sc = new Scanner(System.in);
 
         while (sc.hasNext()) {
-            String input=sc.next();
-            //Complete the code
+            String input=sc.next().replaceAll("[^\\(\\)\\[\\]\\{\\}]", "");
+            while(input.length() != (input = input.replaceAll("\\(\\)|\\[\\]|\\{\\}", "")).length());
+            System.out.println(input.isEmpty());
         }
     }
 }
