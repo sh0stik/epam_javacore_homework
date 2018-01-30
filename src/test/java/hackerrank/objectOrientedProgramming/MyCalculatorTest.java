@@ -9,6 +9,6 @@ public class MyCalculatorTest {
 
 @Test
     public void testRecSum(){
-    assertEquals(12, myCalculator.divisor_sum(6));
+    assertEquals(12, myCalculator.divisorSum(6));
 }
 }

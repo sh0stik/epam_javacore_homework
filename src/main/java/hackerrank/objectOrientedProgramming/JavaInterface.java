@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class JavaInterface {
     public static void main(String[] args) {
-        MyCalculator my_calculator = new MyCalculator();
+        MyCalculator myCalculator = new MyCalculator();
         System.out.print("I implemented: ");
-        ImplementedInterfaceNames(my_calculator);
+        ImplementedInterfaceNames(myCalculator);
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        System.out.print(my_calculator.divisor_sum(n) + "\n");
+        System.out.print(myCalculator.divisorSum(n) + "\n");
         sc.close();
     }
 
@@ -26,13 +26,13 @@ public class JavaInterface {
 }
 
 interface AdvancedArithmetic {
-    int divisor_sum(int n);
+    int divisorSum(int n);
 }
 
 class MyCalculator implements AdvancedArithmetic {
 
     @Override
-    public int divisor_sum(int n) {
+    public int divisorSum(int n) {
         return recSum(n,1);
     }
 
