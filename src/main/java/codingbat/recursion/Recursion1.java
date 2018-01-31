@@ -73,29 +73,41 @@ public class Recursion1 {
     }
 
     public int powerN(int base, int n) {
-        if (n == 1){
+        if (n == 1) {
             return base;
         }
-        return base * powerN(base, n-1);
+        return base * powerN(base, n - 1);
     }
 
     public int countX(String str) {
-        if(str.length() == 0)
+        if (str.length() == 0)
             return 0;
 
-        if(str.charAt(0) == 'x')
+        if (str.charAt(0) == 'x')
             return 1 + countX(str.substring(1));
 
         return countX(str.substring(1));
     }
 
     public int countHi(String str) {
-        if(str.length() == 0)
-            return 0;
-
-        if(str.substring(1,2).equals("hi"))
-            return 1 + countX(str.substring(1));
-
-        return countX(str.substring(1,2));
+        int count = 0;
+        if (str.length() < 2){
+            return count;
+        }
+        if (str.substring(0, 2).equals("hi")) {
+            count += 1;
+        }
+        return count + countHi(str.substring(1));
     }
+    public String changeXY(String str) {
+        if (str.length() < 1){
+            return str;
+        }
+        if (str.charAt(0) == 'x'){
+            return 'y' + changeXY(str.substring(1));
+        }
+
+        return str.charAt(0) +changeXY(str.substring(1));
+    }
+
 }
