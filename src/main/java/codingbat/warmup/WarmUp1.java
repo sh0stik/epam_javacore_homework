@@ -10,30 +10,15 @@ public class WarmUp1 {
             dif = (n - 21) * 2;
         }
         return dif;
-
     }
 
     public boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
-        if (aSmile && bSmile || (!aSmile && !bSmile)) return true;
-
-        if (aSmile && !bSmile) {
-            return false;
-        }
-        return false;
+        return (!aSmile || bSmile) && (aSmile && bSmile || (!aSmile && !bSmile));
 
     }
 
     public boolean sleepIn(boolean weekday, boolean vacation) {
-        if (!weekday & !vacation) {
-            return true;
-        }
-        if (weekday & !vacation) {
-            return false;
-        }
-        if (!weekday & vacation) {
-            return true;
-        }
-        return true;
+        return !(weekday & !vacation) && ((!weekday & !vacation) || (!weekday));
     }
 
     public int sumDouble(int a, int b) {
@@ -53,10 +38,7 @@ public class WarmUp1 {
 
     public boolean makes10(int a, int b) {
         int sum = a + b;
-        if (a == 10|| b == 10 || sum == 10) return true;
-        Math.pow(2,7);
-
-        return false;
+        return a == 10 || b == 10 || sum == 10;
     }
 
     public boolean nearHundred(int n) {
@@ -69,7 +51,6 @@ public class WarmUp1 {
         } else {
             return ((a < 0 && b > 0) || (a > 0 && b < 0));
         }
-
     }
 
     public String notString(String str) {
@@ -121,12 +102,7 @@ public class WarmUp1 {
     }
 
     public boolean startHi(String str) {
-        if (str.length() < 2) {
-            return false;
-        } else if (str.substring(0, 2).equals("hi")) {
-            return true;
-        }
-        return false;
+        return str.length() >= 2 && str.substring(0, 2).equals("hi");
     }
 
     public boolean icyHot(int temp1, int temp2) {
@@ -142,24 +118,21 @@ public class WarmUp1 {
     }
 
     public boolean loneTeen(int a, int b) {
-
-        return ((a >= 13 && a <= 19) && !(b >= 13 && b <= 19) || !(a >= 13 && a <= 19) && (b >= 13 && b <= 19));
+        return ((a >= 13 && a <= 19) && !(b >= 13 && b <= 19) ||
+                !(a >= 13 && a <= 19) && (b >= 13 && b <= 19));
     }
 
     public String delDel(String str) {
         String a = str.substring(0, 1);
         String b = str.substring(1, 4);
-        if (str.length() >= 4 && b.equals("del")) {
+        if (b.equals("del")) {
             return a + str.substring(4);
         }
         return str;
     }
 
     public boolean mixStart(String str) {
-        if (str.length() < 3) {
-            return false;
-        }
-        return str.substring(1, 3).equals("ix");
+        return str.length() >= 3 && str.substring(1, 3).equals("ix");
     }
 
     public String startOz(String str) {
@@ -197,7 +170,8 @@ public class WarmUp1 {
     }
 
     public boolean in3050(int a, int b) {
-        return (a >= 30 && a <= 40 && b >= 30 && b <= 40) || (a >= 40 && a <= 50 && b >= 40 && b <= 50);
+        return (a >= 30 && a <= 40 && b >= 30 && b <= 40) ||
+                (a >= 40 && a <= 50 && b >= 40 && b <= 50);
     }
 
     public int max1020(int a, int b) {
@@ -214,17 +188,14 @@ public class WarmUp1 {
 
     public boolean stringE(String str) {
         int c = 0;
-
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == 'e') c++;
         }
-
         return (c >= 1 && c <= 3);
     }
 
     public boolean lastDigit(int a, int b) {
         return ((b % 10) == a) || ((a % 10) == b);
-
     }
 
     public String endUp(String str) {
@@ -237,10 +208,10 @@ public class WarmUp1 {
 
     }
     public String everyNth(String str, int n) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         for (int i = 0; i < str.length(); i= i +n){
-            res = res + str.charAt(i);
+            res.append(str.charAt(i));
         }
-        return res;
+        return res.toString();
     }
 }

@@ -2,21 +2,21 @@ package codingbat.warmup;
 
 public class WarmUp2 {
     public String stringTimes(String str, int n) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         for (int i = 0; i < n; i++) {
-            res = res + str;
+            res.append(str);
         }
-        return res;
+        return res.toString();
     }
 
     public String frontTimes(String str, int n) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         for (int i = 0; i < n; i++) {
             if (str.length() > 3) {
-                res = res + str.substring(0, 3);
-            } else res = res + str;
+                res.append(str.substring(0, 3));
+            } else res.append(str);
         }
-        return res;
+        return res.toString();
     }
 
     int countXX(String str) {
@@ -29,25 +29,24 @@ public class WarmUp2 {
 
     boolean doubleX(String str) {
         int i = str.indexOf("x");
-        if ((i == -1) || (i + 1 >= str.length())) return false;
+        return (i != -1) && (i + 1 < str.length()) && str.substring(i + 1, i + 2).equals("x");
 
-        return str.substring(i + 1, i + 2).equals("x");
     }
 
     public String stringBits(String str) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         for (int i = 0; i < str.length(); i += 2) {
-            res = res + str.substring(i, i + 1);
+            res.append(str.substring(i, i + 1));
         }
-        return res;
+        return res.toString();
     }
 
     public String stringSplosion(String str) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
-            res = res + str.substring(0, i + 1);
+            res.append(str.substring(0, i + 1));
         }
-        return res;
+        return res.toString();
     }
 
     public int last2(String str) {
@@ -62,8 +61,8 @@ public class WarmUp2 {
 
     public int arrayCount9(int[] nums) {
         int res = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == 9) res++;
+        for (int num : nums) {
+            if (num == 9) res++;
         }
         return res;
     }
@@ -97,41 +96,38 @@ public class WarmUp2 {
     }
 
     public String stringX(String str) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
             if (!(i > 0 && i < (str.length() - 1) && str.substring(i, i + 1).equals("x"))) {
-                res = res + str.substring(i, i + 1);
+                res.append(str.substring(i, i + 1));
             }
         }
-
-        return res;
+        return res.toString();
     }
 
     public String altPairs(String str) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         if (str.length() < 2) return str;
         for (int i = 0; i < str.length(); i += 4) {
             int end = i + 2;
             if (end > str.length()) {
                 end = str.length();
             }
-            res = res + str.substring(i, end);
+            res.append(str.substring(i, end));
         }
-
-        return res;
+        return res.toString();
     }
 
     public String stringYak(String str) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
             if (i + 2 < str.length() && str.charAt(i) == 'y' && str.charAt(i + 1) == 'a' && str.charAt(i + 2) == 'k') {
                 i = i + 2;
             } else {
-                res = res + str.charAt(i);
+                res.append(str.charAt(i));
             }
         }
-
-        return res;
+        return res.toString();
     }
 
     public int array667(int[] nums) {

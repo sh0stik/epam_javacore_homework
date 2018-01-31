@@ -168,18 +168,18 @@ public class String2 {
     }
 
     public String oneTwo(String str) {
-        String one = "";
+        StringBuilder one = new StringBuilder();
         if (str.length() % 3 == 0) {
             for (int i = 0; i < str.length(); i = i + 3) {
-                one = one + str.substring(i + 1, i + 3) + str.charAt(i);
+                one.append(str.substring(i + 1, i + 3)).append(str.charAt(i));
             }
         } else {
             int n = str.length() / 3;
             for (int i = 0; i < n * 3; i = i + 3) {
-                one = one + str.substring(i + 1, i + 3) + str.charAt(i);
+                one.append(str.substring(i + 1, i + 3)).append(str.charAt(i));
             }
         }
-        return one;
+        return one.toString();
     }
 
     public String zipZap(String str) {
