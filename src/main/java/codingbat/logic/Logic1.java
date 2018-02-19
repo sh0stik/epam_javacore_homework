@@ -14,12 +14,12 @@ public class Logic1 {
     }
 
     public boolean squirrelPlay(int temp, boolean isSummer) {
-        return ((temp >= 60 && temp <= 100 && isSummer) || (temp >= 60 && temp <= 90 && !isSummer));
+        return temp >= 60 && temp <= 100 && isSummer || temp >= 60 && temp <= 90;
     }
 
     public int caughtSpeeding(int speed, boolean isBirthday) {
         if (speed <= 60 || (speed <= 65 && isBirthday)) return 0;
-        else if (speed > 60 && speed <= 80 || (speed <= 85 && isBirthday)) return 1;
+        else if (speed <= 80 || speed <= 85 && isBirthday) return 1;
         else return 2;
     }
 
@@ -53,9 +53,7 @@ public class Logic1 {
     }
 
     public boolean old35(int n) {
-        if (n % 15 == 0) return false;
-        else if (n % 3 == 0 || n % 5 == 0) return true;
-        return false;
+        return n % 15 != 0 && (n % 3 == 0 || n % 5 == 0);
     }
 
     public boolean less20(int n) {
@@ -72,9 +70,7 @@ public class Logic1 {
     }
 
     public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
-        if (isAsleep || isMorning && isMom) return false;
-        else if (isMorning && isMom || !isAsleep) return true;
-        else return false;
+        return !isAsleep && (!isMorning || !isMom);
     }
 
     public int teaParty(int tea, int candy) {
@@ -107,13 +103,11 @@ public class Logic1 {
     }
 
     public boolean inOrder(int a, int b, int c, boolean bOk) {
-        if (b > a && c > b) return true;
-        else return bOk && c > b;
+        return b > a && c > b || bOk && c > b;
     }
 
     public boolean inOrderEqual(int a, int b, int c, boolean equalOk) {
-        if (a < b && b < c) return true;
-        else return (equalOk && ((a == b && b < c) || (b == c && a < b) || (a == b && b == c)));
+        return a < b && b < c || (equalOk && ((a == b && b < c) || (b == c && a < b) || (a == b && b == c)));
     }
 
     public boolean lastDigit(int a, int b, int c) {
@@ -131,7 +125,7 @@ public class Logic1 {
     }
 
     public int maxMod5(int a, int b) {
-        int max = 0;
+        int max;
         if (a == b) return 0;
         if (a % 5 == b % 5 && a < b) return a;
         else if (a % 5 == b % 5 && a > b) return b;
@@ -145,14 +139,12 @@ public class Logic1 {
         if (a == 2 && b == 2 && c == 2) return 10;
         else if (a == b && b == c) return 5;
         else return 0;
-
     }
 
     public int greenTicket(int a, int b, int c) {
         if (a == b && b != c || a != b && b == c || a != b && a == c) return 10;
-        if (a != b && b != c) return 0;
+        if (a != b) return 0;
         else return 20;
-
     }
 
     public int blueTicket(int a, int b, int c) {
@@ -165,12 +157,11 @@ public class Logic1 {
 
         if (ab == bc + 10 || ab == ac + 10)
             return 5;
-
         return 0;
     }
 
     public boolean shareDigit(int a, int b) {
-        return  (a / 10 == b / 10 || a % 10 == b % 10 ||
+        return (a / 10 == b / 10 || a % 10 == b % 10 ||
                 a % 10 == b / 10 || a / 10 == b % 10);
     }
 
@@ -182,7 +173,6 @@ public class Logic1 {
 
         if (n1 > n) return a;
         return a + b;
-
     }
 
 }
